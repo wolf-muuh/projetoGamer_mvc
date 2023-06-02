@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\54750759805\\Desktop\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj": {}
+    "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\54750759805\\Desktop\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj": {
+    "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\54750759805\\Desktop\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj",
+        "projectUniqueName": "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj",
         "projectName": "projeto_gamer_mvc",
-        "projectPath": "C:\\Users\\54750759805\\Desktop\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj",
+        "projectPath": "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\projeto_gamer_mvc.csproj",
         "packagesPath": "C:\\Users\\54750759805\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\54750759805\\Desktop\\projeto_gamer_mvc\\obj\\",
+        "outputPath": "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\54750759805\\AppData\\Roaming\\NuGet\\NuGet.Config",
