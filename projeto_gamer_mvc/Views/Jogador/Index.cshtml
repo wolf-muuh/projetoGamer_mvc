@@ -1,14 +1,31 @@
 @model Jogador
 
 @{
-    ViewData["Title"] = "Equipe";
+    ViewData["Title"] = "Jogador";
 }
 
 <h1>Tela de Jogadores</h1>
 
-<form action="">
-    <label for="">Id Jogador</label>
-    <input type="text" name="Nome">
+<table class="table table-striped ">
+    <thead>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Equipe</th>
+    </thead>
 
-    <label for=""></label>
-</form>
+    <tbody>
+        @foreach (Jogador jogador in ViewBag.Jogador)
+        {
+            <tr>
+                <td>@jogador.IdJogador</td>
+                <td>@jogador.Nome</td>
+                <td>@jogador.Email</td>
+                <td>
+                    <img src="/img/Equipes/@jogador.Equipe.Imagem" alt="Imagem da equipe @jogador.Equipe.Nome" width="50px">
+                </td>
+            </tr>   
+        }
+    </tbody>
+</table>
+
