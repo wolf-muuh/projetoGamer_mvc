@@ -30,10 +30,35 @@ namespace projeto_gamer_mvc.Controllers
         {
             Jogador novoJogador = new Jogador();
 
-            novoJogador.IdJogador = int.Parse(form["Id Jogador"].ToString());
-            
+            novoJogador.Nome = form["Nome"].ToString();
+            novoJogador.Email = form["Email"].ToString();
+            novoJogador.Senha = form["Senha"].ToString();
+            novoJogador.IdEquipe = int.Parse(form["IdEquipe"].ToString());
+            c.Jogador.Add(novoJogador);
+            c.SaveChanges();
 
             return LocalRedirect("~/Jogador/Listar");
+        }
+
+        [Route("Excluir/{id}")]
+        public IActionResult Excluir(int id)
+        {
+            Jogador JogadorBuscado = c.Jogador.First(j => j.IdJogador == id);
+
+            c.Jogador.Remove(JogadorBuscado);
+            c.SaveChanges();
+
+            return LocalRedirect("~/Jogador/Listar");
+        }
+
+        [Route("Editar/{id}")]
+        public IActionResult Editar(int id)
+        {
+            Jogador jogadorBuscado = c.Jogador.First(j => j.IdJogador == id);
+
+            ViewBag.Jogador = jogadorBuscado;
+
+            return View("Edit");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
