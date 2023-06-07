@@ -20,9 +20,11 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Listar")]  //http://localhost/Equipe/Listar
         public IActionResult Index()
         {
+            ViewBag.UserName = HttpContext.Session.GetString("Username");
+
             //"mochila" que contém a lista das equipes 
             // Podemos usar essa "mochila" na view de equipe
-            ViewBag.Equipe =  c.Equipe.ToList();
+            ViewBag.Equipe = c.Equipe.ToList();
             return View();
         }
 
@@ -37,7 +39,7 @@ namespace projeto_gamer_mvc.Controllers
             // novaEquipe.Imagem = form["Imagem"].ToString();
 
             // Aqui começa o upload de imagem            
-                        
+
             if (form.Files.Count > 0)
             {
                 var file = form.Files[0];
@@ -75,7 +77,7 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Excluir/{id}")]
         public IActionResult Excluir(int id)
         {
-            Equipe e = c.Equipe.First( e => e.IdEquipe == id);
+            Equipe e = c.Equipe.First(e => e.IdEquipe == id);
 
             c.Equipe.Remove(e);
 
@@ -87,7 +89,9 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Editar/{id}")]
         public IActionResult Editar(int id)
         {
-            Equipe e = c.Equipe.First( e => e.IdEquipe == id);
+            ViewBag.UserName = HttpContext.Session.GetString("Username");
+
+            Equipe e = c.Equipe.First(e => e.IdEquipe == id);
 
             ViewBag.Equipe = e;
 
@@ -120,7 +124,7 @@ namespace projeto_gamer_mvc.Controllers
                     file.CopyTo(stream);
                 }
 
-                novaEquipe.Imagem = file.FileName;                
+                novaEquipe.Imagem = file.FileName;
             }
             else
             {
@@ -137,13 +141,13 @@ namespace projeto_gamer_mvc.Controllers
 
             return LocalRedirect("~/Equipe/Listar");
 
-        
+
         }
 
 
 
 
-        
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
