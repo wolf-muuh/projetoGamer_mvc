@@ -22,7 +22,7 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Login")]
         public IActionResult Index()
         {
-            ViewBag.UserName = HttpContext.Session.GetString("Username");
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
             return View();
         }
 
