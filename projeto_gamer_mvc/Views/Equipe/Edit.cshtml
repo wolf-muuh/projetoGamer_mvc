@@ -4,6 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
+<link rel="stylesheet" href="~/css/equipes.css">
+
 <h2>Edição de Equipes</h2>
 
 @if (ViewBag.UserName == null)
@@ -12,19 +14,29 @@
 }
 else
 {
-    <form method="post" action="@Url.Action("Atualizar")" enctype="multipart/form-data">
-        <input type="hidden" name="IdEquipe" value="@ViewBag.Equipe.IdEquipe">
+    <main>
 
-        <label for="">Nome</label>
-        <input type="text" name="Nome" value="@ViewBag.Equipe.Nome">
+        <section class="conteiner-grid cadastro-equipes">
+            <form method="post" action="@Url.Action("Cadastrar")" enctype="multipart/form-data" class="frm-cad-equipe">
+                <div class="cadequipe-titulo">
+                    <h1>Edit de Equipes</h1>
+                    <hr>
+                </div>
 
-        <label for="">Imagem</label>
-        <input type="file" name="Imagem" value="@ViewBag.Equipe.Imagem">
+                @* <input class="campo-entrada" type="number" id="idEquipe" placeholder="Digite o Id da sua equipe:"> *@
+                <input type="hidden" name="IdEquipe" value="@ViewBag.Equipe.IdEquipe">
+
+                <input class="campo-entrada" name="Nome" type="text" value="@ViewBag.Equipe.Nome"
+                    placeholder="Digite o nome da sua equipe:" required>
+                <label class="foto" for="foto-file">
+                    Nenhuma imagem selecionada...
+                    <input type="file" name="Imagem" value="@ViewBag.Equipe.Imagem" id="foto-file">
+                </label>
+
+                <button>Atualizar</button>
+            </form>
+        </section>
+    </main>
 
 
-        <button type="submit">Atualizar</button>
-
-    </form>
 }
-
-

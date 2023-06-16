@@ -77,6 +77,7 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Excluir/{id}")]
         public IActionResult Excluir(int id)
         {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
             Equipe e = c.Equipe.First(e => e.IdEquipe == id);
 
             c.Equipe.Remove(e);
@@ -89,7 +90,7 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Editar/{id}")]
         public IActionResult Editar(int id)
         {
-            ViewBag.UserName = HttpContext.Session.GetString("Username");
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
 
             Equipe e = c.Equipe.First(e => e.IdEquipe == id);
 
@@ -101,6 +102,7 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Atualizar")]
         public IActionResult Atualizar(IFormCollection form, Equipe e)
         {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
             Equipe novaEquipe = new Equipe();
 
             novaEquipe.Nome = e.Nome;

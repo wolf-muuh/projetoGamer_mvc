@@ -19,7 +19,7 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Listar")]
         public IActionResult Index()
         {
-            ViewBag.UserName = HttpContext.Session.GetString("Username");
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
 
             ViewBag.Jogador = c.Jogador.ToList();
             ViewBag.Equipe = c.Equipe.ToList();
@@ -30,6 +30,8 @@ namespace projeto_gamer_mvc.Controllers
 
         public IActionResult Cadastrar(IFormCollection form)
         {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
             Jogador novoJogador = new Jogador();
 
             novoJogador.Nome = form["Nome"].ToString();
@@ -45,6 +47,8 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Excluir/{id}")]
         public IActionResult Excluir(int id)
         {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+            
             Jogador JogadorBuscado = c.Jogador.First(j => j.IdJogador == id);
 
             c.Jogador.Remove(JogadorBuscado);
@@ -70,6 +74,8 @@ namespace projeto_gamer_mvc.Controllers
         [Route("Atualizar")]
         public IActionResult Atualizar(IFormCollection form)
         {
+            ViewBag.UserName = HttpContext.Session.GetString("UserName");
+
             Jogador novoJogador = new Jogador();
 
             novoJogador.IdJogador = int.Parse(form["IdJogador"].ToString());

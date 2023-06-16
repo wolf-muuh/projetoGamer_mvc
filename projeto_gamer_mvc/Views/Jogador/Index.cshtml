@@ -4,6 +4,8 @@
     ViewData["Title"] = "Jogador";
 }
 
+<link rel="stylesheet" href="~/css/jogadores.css">
+
 <h1>Tela de Jogadores</h1>
 
 @if (ViewBag.UserName == null)
@@ -13,6 +15,32 @@
 
 else
 {
+
+    <form action="" class="frm-cad-equipe">
+        <div class="cadequipe-titulo">
+            <h1>Cadastro de Jogadores</h1>
+            <hr>
+        </div>
+
+        <input class="campo-entrada" type="number" id="id-equipe" placeholder="Digite o Id da sua equipe:">
+        <input class="campo-entrada" type="text" id="nome-equipe" placeholder="Digite o nome da sua equipe:">
+
+        <select class="campo-entrada" id="equipe-select">
+            <option value="">Selecione uma Equipe</option>
+            <option value="x">Equipe X</option>
+            <option value="y">Equipe Y</option>
+        </select>
+
+        <input class="campo-entrada" type="text" id="nome-jogador" placeholder="Digite o nome do Jogador:">
+        <input class="campo-entrada" type="email" id="email-jogador" placeholder="Digite o Email do Jogador:">
+        <input class="campo-entrada" type="password" id="senha" placeholder="Digite a Senha:">
+        <button>Cadastrar</button>
+
+
+
+
+    </form>
+
     <form method="post" action="@Url.Action("Cadastrar")">
         <label for="">Nome</label>
         <input type="text" name="Nome">
