@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MkmL5TesemaOlZld3VQdPakisqKKtNLqv4q4YU3v+OI=",
+  "Hash": "rJcrxpB56tBEKv03W5cXR/mJ3pqTgi+1hi9+z4nbMbo=",
   "Source": "projeto_gamer_mvc",
   "BasePath": "_content/projeto_gamer_mvc",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
+    },
+    {
+      "Identity": "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\wwwroot\\css\\jogadores.css",
+      "SourceId": "projeto_gamer_mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\wwwroot\\",
+      "BasePath": "_content/projeto_gamer_mvc",
+      "RelativePath": "css/jogadores.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\jogadores.css"
     },
     {
       "Identity": "C:\\Users\\54750759805\\Desktop\\projetoGamer_mvc\\projeto_gamer_mvc\\wwwroot\\css\\login.css",
